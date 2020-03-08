@@ -797,6 +797,9 @@ textarea::placeholder{
 .fourth__icon{
     margin-right: 1px;
 }
+.footer__social:hover{
+    cursor: pointer;
+}
 @font-face {
     font-family: "LatoBold";
     src:url("./assets/Lato-Bold.ttf");
