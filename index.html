@@ -21,20 +21,28 @@
         </nav>
     </div>
 </header>
+<div class="psevdo__header"></div>
 <main>
     <div class="slider__bg" id="sliderbg">
-        <div  id="display" class="black__display__hidden" onclick="vert__phone__display()"></div>
-        <div class="horizont__phone__display__hidden" id="horizont__phone__display" onclick="horizontal__phone__display()"></div>
-        <div class="slider__wrapper" id="slider">
-            <img src="./assets/chev.svg" class="left__chev">
-            <div class="slide1" id="slide1 show">
-                <img src="./assets/iPhone%20Vertical.png " height="490" class="vert_phone" onclick="vert__phone__display()" >
-                <img src="./assets/iPhone%20Horizontal.png" height="251"  width="495" class="horizont__phone" onclick="horizontal__phone__display()">
+        <div class="wrapper__slider">
+            <div class="wrap">
+                <div  id="display" class="black__display__hidden" onclick="vert__phone__display()"></div>
+                <div class="horizont__phone__display__hidden" id="horizont__phone__display" onclick="horizontal__phone__display()"></div>
+                <div class="b-carousel js-carousel">
+                    <img class="b-carousel__prev js-carousel__prev" src="./assets/chev%20(1).png" >
+                    <img class="b-carousel__next js-carousel__next" src="./assets/chev.png" >
+                    <div class="b-carousel__wrap js-carousel__wrap">
+                        <div class="b-carousel__item slide-1">
+                            <img class="vert_phone" src="./assets/iPhone%20Vertical.png" alt="" onclick="vert__phone__display()">
+                            <img class="horizont__phone" src="./assets/iPhone%20Horizontal.png" alt="" onclick="horizontal__phone__display()">
+                        </div>
+                        <div class="b-carousel__item">
+                            <img class="slider__image" src="./assets/Slide-2.png" alt="">
+                        </div>
+                    </div>
+
+                </div>
             </div>
-            <div class="slide2" id="slide2">
-                <img src="./assets/Slide-2.png" class="Slide2" width="900" height="600" >
-            </div>
-            <img src="./assets/chev%20(1).svg" class="right__chev" onclick="slider()">
         </div>
     </div>
     <div class="services__bg" id="services">

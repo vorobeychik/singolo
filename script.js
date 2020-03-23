@@ -5,57 +5,229 @@ const NAV__LI = document.getElementById('nav');
 const PIC = document.getElementById('picture__container');
 const FORMA = document.getElementById('forms');
 const ITEMS = document.getElementById('slider');
-const IMAGES = ITEMS.querySelectorAll('div');
-const RIGHT = ITEMS.querySelector('.right__chev');
-const LEFT = ITEMS.querySelector('.left__chev');
-const sliderbg = document.getElementById('sliderbg');
+const LEFT = document.getElementsByClassName('b-carousel__prev')[0];
+const RIGHT = document.getElementsByClassName('b-carousel__next')[0];
+const BG = document.getElementById('sliderbg');
+
+(function() {
+    "use strict";
+
+    function Carousel(setting) {
+        /* Scope privates methods and properties */
+        let privates = {},
+            xDown,
+            yDown,
+            xUp,
+            yUp,
+            xDiff,
+            yDiff;
+
+        /* Public methods */
+        // Prev slide
+        this.prev_slide = () => {
+            if (!privates.isAnimationEnd) {
+                return;
+            }
+
+            privates.isAnimationEnd = false;
+
+            --privates.opt.position;
+
+            if (privates.opt.position < 0) {
+                privates.sel.wrap.classList.add("s-notransition");
+                privates.sel.wrap.style[
+                    "transform"
+                    ] = `translateX(-${privates.opt.max_position}00%)`;
+                privates.opt.position = privates.opt.max_position - 1;
+            }
+
+            setTimeout(() => {
+                privates.sel.wrap.classList.remove("s-notransition");
+                privates.sel.wrap.style[
+                    "transform"
+                    ] = `translateX(-${privates.opt.position}00%)`;
+            }, 10);
+
+            privates.sel.wrap.addEventListener("transitionend", () => {
+                privates.isAnimationEnd = true;
+            });
+
+            if (privates.setting.autoplay === true) {
+                privates.timer.become();
+            }
+        };
+
+        // Next slide
+        this.next_slide = () => {
+            if (!privates.isAnimationEnd) {
+                return;
+            }
+
+            privates.isAnimationEnd = false;
+
+            if (privates.opt.position < privates.opt.max_position) {
+                ++privates.opt.position;
+            }
+
+            privates.sel.wrap.classList.remove("s-notransition");
+            privates.sel.wrap.style[
+                "transform"
+                ] = `translateX(-${privates.opt.position}00%)`;
+
+            privates.sel.wrap.addEventListener("transitionend", () => {
+                if (privates.opt.position >= privates.opt.max_position) {
+                    privates.sel.wrap.style["transform"] = "translateX(0)";
+                    privates.sel.wrap.classList.add("s-notransition");
+                    privates.opt.position = 0;
+                }
+
+                privates.isAnimationEnd = true;
+            });
 
 
-let sliderIndex = 0;
+        };
 
-function slider(index) {
 
-    if (index > IMAGES.length - 1) {
-        sliderIndex = 0;
+        // Go to
+        this.goto = index => {
+            privates.opt.position = index - 1;
+            this.next_slide();
+        };
+
+        // Item
+        this.index = () => {
+            return privates.opt.position;
+        };
+
+        /* privates methods */
+        privates.hts = e => {
+            xDown = e.touches[0].clientX;
+            yDown = e.touches[0].clientY;
+        };
+
+        privates.htm = e => {
+            if (!xDown || !yDown) {
+                return;
+            }
+
+            xUp = e.touches[0].clientX;
+            yUp = e.touches[0].clientY;
+
+            xDiff = xDown - xUp;
+            yDiff = yDown - yUp;
+
+            if (Math.abs(xDiff) > Math.abs(yDiff)) {
+                if (xDiff > 0) {
+                    this.next_slide();
+                } else {
+                    this.prev_slide();
+                }
+            }
+
+            xDown = 0;
+            yDown = 0;
+        };
+
+        /* privates properties */
+        privates.default = {
+            touch: true,
+            autoplay: false,
+            autoplayDelay: 3000,
+            pauseOnFocus: true,
+            pauseOnHover: true
+        };
+
+        privates.setting = Object.assign(privates.default, setting);
+
+        privates.isAnimationEnd = true;
+
+        privates.sel = {
+            wrap: document.querySelector(privates.setting.wrap),
+            children: document.querySelector(privates.setting.wrap).children,
+            prev: document.querySelector(privates.setting.prev),
+            next: document.querySelector(privates.setting.next)
+        };
+
+        privates.opt = {
+            position: 0,
+            max_position: document.querySelector(privates.setting.wrap).children
+                .length
+        };
+
+        /* Constructor */
+        // Clone first elem to end wrap
+        privates.sel.wrap.appendChild(privates.sel.children[0].cloneNode(true));
+        // Control
+        if (privates.sel.prev !== null) {
+            privates.sel.prev.addEventListener("click", () => {
+                this.prev_slide();
+            });
+        }
+
+        if (privates.sel.next !== null) {
+            privates.sel.next.addEventListener("click", () => {
+                this.next_slide();
+            });
+        }
     }
-    if (index < 0) {
-        sliderIndex = IMAGES.length - 1;
-    }
-    for (let i = 0; i < IMAGES.length; i++) {
-        IMAGES[i].style.display = 'none';
-    }
 
-    if(sliderIndex === 1 )
-    {sliderbg.style.backgroundColor = '#648BF0';
-     ITEMS.style.backgroundColor = '#648BF0'
-        BLACK__HORIZONTAL__DISPLAY.classList.toggle("horizont__phone__display__hidden")
-        BLACK__DISPLAY.classList.toggle("black__display__hidden")
-    }else{sliderbg.style.backgroundColor = '#f06c64'
-        ITEMS.style.backgroundColor = '#f06c64'
-    }
-    IMAGES[sliderIndex].style.display = 'block';
-}
-LEFT.addEventListener('click', () => {
-    slider(--sliderIndex)
-});
-RIGHT.addEventListener('click', () => {
-    slider(++sliderIndex)
-});
+    let a = new Carousel({
+        wrap: ".js-carousel__wrap",
+        prev: ".js-carousel__prev",
+        next: ".js-carousel__next",
+    });
+})();
+
 
 
 function vert__phone__display() {
-    if(BLACK__DISPLAY.classList.contains("black__display__hidden")){ BLACK__DISPLAY.classList
-        .toggle("black__display__visible")}
-    if(BLACK__DISPLAY.classList.contains("black__display__visible")){ BLACK__DISPLAY.classList
-        .toggle("black__display__hidden")}
+    if(BLACK__DISPLAY.classList.contains("black__display__hidden")){
+        BLACK__DISPLAY.classList.remove("black__display__hidden");
+        BLACK__DISPLAY.classList.add("black__display__visible");
+    }else{
+        BLACK__DISPLAY.classList.remove("black__display__visible");
+        BLACK__DISPLAY.classList.add("black__display__hidden");
+    }
 
 }
 function horizontal__phone__display() {
-    if(BLACK__HORIZONTAL__DISPLAY.classList.contains("horizont__phone__display")){ BLACK__HORIZONTAL__DISPLAY.classList
-        .toggle("horizont__phone__display__hidden")}
-    if(BLACK__HORIZONTAL__DISPLAY.classList.contains("horizont__phone__display__hidden")){ BLACK__HORIZONTAL__DISPLAY.classList
-        .toggle("horizont__phone__display")}
+    if(BLACK__HORIZONTAL__DISPLAY.classList.contains("horizont__phone__display")){
+        BLACK__HORIZONTAL__DISPLAY.classList.remove("horizont__phone__display");
+        BLACK__HORIZONTAL__DISPLAY.classList.add("horizont__phone__display__hidden")
+    }else{
+        BLACK__HORIZONTAL__DISPLAY.classList.remove("horizont__phone__display__hidden");
+        BLACK__HORIZONTAL__DISPLAY.classList.add("horizont__phone__display")
+    }
 }
+
+  let  count = 0;
+  LEFT.addEventListener('click', event => {
+      ++count;
+      BLACK__DISPLAY.classList.remove("black__display__visible");
+      BLACK__DISPLAY.classList.add("black__display__hidden");
+      BLACK__HORIZONTAL__DISPLAY.classList.remove("horizont__phone__display");
+      BLACK__HORIZONTAL__DISPLAY.classList.add("horizont__phone__display__hidden")
+       if(count === 1){BG.style.backgroundColor = '#648BF0'}
+       if(count === 0 || count === 2){
+           BG.style.backgroundColor = '#f06c64';
+       }
+       if(count === 2){ count = 0}
+  });
+
+  RIGHT.addEventListener('click', event => {
+      ++count;
+      BLACK__DISPLAY.classList.remove("black__display__visible");
+      BLACK__DISPLAY.classList.add("black__display__hidden");
+      BLACK__HORIZONTAL__DISPLAY.classList.remove("horizont__phone__display");
+      BLACK__HORIZONTAL__DISPLAY.classList.add("horizont__phone__display__hidden")
+      if(count === 1){BG.style.backgroundColor = '#648BF0'}
+      if(count === 0 || count === 2){
+          BG.style.backgroundColor = '#f06c64';
+      }
+      if(count === 2){ count = 0}
+  });
+
+
 function navigation() {
     NAV__LI.addEventListener("click",(event)=>{
 
@@ -112,6 +284,10 @@ document.querySelector('.form__button').addEventListener('click',event =>{
     document.getElementById('modal').style.display='block';
     document.getElementsByClassName('modal__subject')[0].innerText = subject;
     document.getElementsByClassName('modal__description')[0].innerText = dicribe;
+    for(let i of document.getElementsByTagName('input')){
+        i.value = '';
+    }
+    document.getElementsByTagName('textarea')[0].value = ''
 
 });
 document.getElementById('close-too').addEventListener('click',event => {

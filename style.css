@@ -6,6 +6,97 @@
         margin: 0;
         border: 0;
     }
+    .psevdo__header{
+        height: 95px;
+        width: 100px;
+
+    }
+    .vert_phone{
+        margin-bottom: 10px;
+        margin-left: 6px;
+
+    }
+    .horizont__phone{
+        margin-left: 65px;
+        margin-bottom: 10px;
+    }
+
+
+    wrap {
+        margin: 10px auto;
+        width: 100%;
+        max-width: 700px;
+    }
+    /* MAIN STYLES */
+    .b-carousel {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        box-sizing: border-box;
+    }
+
+    .b-carousel__prev{
+        position: absolute;
+        width: 16px;
+        height: 27px;
+        cursor: pointer;
+        margin-left: 160px ;
+        margin-top: 280px;
+        transition: 0.2s;
+        z-index: 100;
+    }
+    .b-carousel__next{
+        position: absolute;
+        width: 16px;
+        height: 27px;
+        cursor: pointer;
+        margin-right: 140px;
+        margin-top: 280px;
+        transition: 0.2s;
+        z-index: 4;
+    }
+    .b-carousel__next {
+        left: auto;
+        right: 20px;
+    }
+
+    .b-carousel__wrap {
+        display: flex;
+        transition: transform .5s;
+        will-change: transform;
+        position: relative;
+        z-index: 1;
+        height: 100%;
+    }
+
+    .b-carousel__item {
+        flex: 0 0 100%;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .b-carousel__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+
+
+    .s-notransition {
+        transition: 0s;
+    }
+
+
+    .slider {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        height: 591px;
+    }
 
     .button-modal{
         padding: .5em .7em;
@@ -84,36 +175,14 @@
         margin: -1px;
         overflow: hidden;
     }
-
-    .Slide2{
-        position: absolute;
-        margin-left: -297px;
-        z-index: 2;
-    }
-    .slide1{
-        width: 895px;
-        height: 594px;
-        margin-top: -315px;
-        margin-left: 58px;
-        z-index: 4;
-        position: absolute;
-
-    }
-
-    .slide2{
-        position: absolute;
-        margin-top: -311px;
-        margin-left: 355px;
-        display: none;
-        z-index: 2;
-
-
-    }
     .header{
         background-color: #2d303a ;
         width: 100%;
         height: 89px;
+        position: fixed;
         border-bottom:solid #323746 6px;
+        z-index: 200;
+
 
     }
 
@@ -152,6 +221,7 @@
         margin-right: 37px;
 
 
+
     }
     .nav__li{
         text-transform: uppercase;
@@ -187,11 +257,11 @@
         z-index: 5;
     }
     .horizont__phone__display{
-        width: 334px;
+        width: 336px;
         height: 190px;
         position: absolute;
         background-color: black;
-        margin-left: 607px;
+        margin-left: 605px;
         margin-top: 187px;
         z-index: 5;
     }
@@ -215,36 +285,7 @@
         height: 594px;
         background-color: #f06c64;
     }
-    .vert_phone{
-        margin-top: 56px;
-        margin-left: 53px;
 
-    }
-    .left__chev:hover{
-        transform: scale(1.3);
-
-    }
-    .right__chev:hover{
-        transform: scale(1.3);
-
-    }
-    .left__chev{
-        margin-left: 42px ;
-        margin-top: 280px;
-        transition: 0.2s;
-        z-index: 4;
-    }
-    .right__chev{
-        margin-top: -115px;
-        margin-left: 963px;
-        transition: 0.2s;
-        z-index: 4;
-    }
-    .horizont__phone{
-        margin-left: 62px;
-        margin-bottom: 122px;
-
-    }
     .services__bg{
         width: 100%;
         background-color: #f2f2f2;
