@@ -6,6 +6,7 @@
     <title>Title</title>
 </head>
 <body>
+
 <header class="header" >
 
     <div class="wrapper">
@@ -21,9 +22,10 @@
         </nav>
     </div>
 </header>
-<div class="psevdo__header"></div>
-<main>
+
+
     <div class="slider__bg" id="sliderbg">
+        <div class="psevdo__header"></div>
         <div class="wrapper__slider">
             <div class="wrap">
                 <div  id="display" class="black__display__hidden" onclick="vert__phone__display()"></div>
@@ -50,7 +52,7 @@
             <div class="services__text">
                 <h2 class="h2__services">Our Services</h2>
                 <p class="services__paragraph">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus,
-                    nisi erat porttitor<br> ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor
+                    nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor
                     mauris condimentum nibh.</p>
             </div>
             <div class="main__bg">
@@ -79,8 +81,6 @@
                                 aliquet turpis, et consequat felis. Quisque condimentum.</p>
                         </div>
                     </div>
-                </div>
-                <div class="second__div">
                     <div class="bottom__div__settings left__bottom__block">
                         <img src="./assets/phone.png " class="picture__phone">
                         <div class="container">
@@ -104,7 +104,6 @@
                             <p class=" right__paragraphs">Quisque hendrerit purus dapibus, ornare nibh vitae,
                                 viverra nibh. Fusce vitae aliquam tellus.</p>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -123,25 +122,23 @@
                         <button class="button fourth__button" onclick="change__color()">Artwork</button>
                     </div>
                 </div>
-                <div class="pictures__container" id="picture__container">
-                    <div class="picture picture1" ></div>
-                    <div class="picture picture2" ></div>
-                    <div class="picture picture3" ></div>
-                    <div class="picture picture4" ></div>
-                    <div class="picture picture5" ></div>
-                    <div class="picture picture6" ></div>
-                    <div class="picture picture7" ></div>
-                    <div class="picture picture8" ></div>
-                    <div class="picture picture9" ></div>
-                    <div class="picture picture10"></div>
-                    <div class="picture picture11"></div>
-                    <div class="picture picture12"></div>
-                </div>
+                <ul class="pictures__container" id="picture__container">
+                    <li class="picture"><img src="./assets/image1.png"  class="portfolio__img" alt=""></li>
+                    <li class="picture"><img src="./assets/image2.png"  class="portfolio__img" alt=""></li>
+                    <li class="picture"><img src="./assets/image3.png"  class="portfolio__img" alt=""></li>
+                    <li class="picture"><img src="./assets/image4.png"  class="portfolio__img" alt=""></li>
+                    <li class="picture"><img src="./assets/image5.png"  class="portfolio__img" alt=""></li>
+                    <li class="picture"><img src="./assets/image6.png"  class="portfolio__img" alt=""></li>
+                    <li class="picture"><img src="./assets/image7.png"  class="portfolio__img" alt=""></li>
+                    <li class="picture"><img src="./assets/image8.png"  class="portfolio__img" alt=""></li>
+                    <li class="picture"><img src="./assets/image9.png"  class="portfolio__img" alt=""></li>
+                    <li class="picture"><img src="./assets/image10.png"  class="portfolio__img" alt=""></li>
+                    <li class="picture"><img src="./assets/image11.png"  class="portfolio__img" alt=""></li>
+                    <li class="picture"><img src="./assets/image12.png"  class="portfolio__img" alt=""></li>
+                </ul>
             </div>
         </div>
     </div>
-
-    <
     <div class="modal" id="modal">
         <div class="modal-backdrop"></div>
         <div class="modal-body">
@@ -163,106 +160,108 @@
                     <p class="about__paragraph">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum.
                         Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
                         Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-                    <div class="about__bottom">
-                        <div class="picture__bottom left__picture"></div>
-                        <div class="picture__bottom center__picture"></div>
-                        <div class="picture__bottom right__picture"></div>
-                    </div>
-                    <div class="about__bottom__description">
-
-                        <div class="about__description">
-                            <p class="description__heading">Adam Jensen</p>
-                            <p class="description__paragraph">Quisque luctus, quam eget molestie commodo,
-                                lacus purus cursus purus, nec rutrum tellus dolor id lorem.</p>
-                        </div>
-                        <div class="about__description">
-                            <p class="description__heading">Desmond Miles</p>
-                            <p class="description__paragraph">Curabitur vestibulum eget mauris quis laoreet.
-                                Phasellus in quam laoreet, viverra lacus ut, ultrices velit.</p>
-                        </div>
-                        <div class="about__description">
-                            <p class="description__heading">Scolara Visari</p>
-                            <p class="description__paragraph">Nulla sed nunc et tortor luctus faucibus.
-                                Morbi at aliquet turpis, et consequat felis. Quisque condimentum.</p>
-                        </div>
-
-                    </div>
-
-                    <div class="about__social">
-                        <div class="social">
-                            <img src="./assets/facebook.png" class="social__icons">
-                            <img src="./assets/google.png" class="social__icons">
-                            <img src="./assets/twitter.png" class="social__icons">
-                            <img src="./assets/linkedin.png" class="social__icons">
-                        </div>
-                        <div class="social social__second">
-                            <img src="./assets/facebook.png" class="social__icons">
-                            <img src="./assets/google.png" class="social__icons">
-                            <img src="./assets/twitter.png" class="twitter">
-                            <img src="./assets/linkedin.png" class="social__icons">
-                        </div>
-                        <div class="social social__third">
-                            <img src="./assets/facebook.png" class="social__icons">
-                            <img src="./assets/google.png" class="social__icons">
-                            <img src="./assets/twitter.png" class="social__icons">
-                            <img src="./assets/linkedin.png" class="social__icons">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="main__bg__singolo3" id="contact">
-            <div class="wrapper__singolo3">
-                <div class="form__text">
-                    <h2 class="form__heading">Get a Quote</h2>
-                    <p class="form__paragraph">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum.
-                        Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce
-                        dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-                </div>
-                <div class="form__container">
-                    <form class="forms"  name="letter" id="forms">
-                        <input name="name" type="text" class="form first__form reqired__inputs " placeholder="Name (Required)" required maxlength="12"
-                               minlength="3" >
-                        <input name="email" type="email" class="form other__forms reqired__inputs" placeholder="Email (Required)" required>
-                        <input  name="subject" type="text" class="form third__forms" placeholder="Subject">
-                        <textarea name="description" class="textarea fourth__form" placeholder="Describe your project in detail..."></textarea>
-                        <input name="submit" type="submit" value="submit" class="form__button" >
-                    </form>
-                    <div class="contacts">
-                        <p class="contacts__heading">Contact Information</p>
-                        <p class="contacts__paragraph">Quisque hendrerit purus dapibus, ornare nibh vitae, viver-<br>ra nibh. Fusce vitae aliquam tellus.
-                            Proin sit amet volutpat libero. Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet
-                            turpis, et consequat felis.
-                        </p>
-                        <div class="under__contacts">
-                            <div class="first__under__contacts__container">
-                                <img src="./assets/location.png" class="contacts__img">
-                                <p class="under__contacts__paragraph"> Elm St. 14/05 Lost City</p>
+                    <div class="columns__container">
+                        <div class="about__columns">
+                            <img src="./assets/adam.png" class="columns__img">
+                            <div class="about__description">
+                                <p class="description__heading">Adam Jensen</p>
+                                <p class="description__paragraph">Quisque luctus, quam eget molestie commodo,
+                                    lacus purus cursus purus, nec rutrum tellus dolor id lorem.</p>
                             </div>
-                            <div class="under__contacts__container">
-                                <img src="./assets/phone%20(1).png" class="second__contacts__img">
-                                <a href="tel:+1234567890" class="second__under__contacts__paragraph">     03528 331 86 35</a>
+                            <div class="social">
+                                <img src="./assets/facebook.png" class="social__icons">
+                                <img src="./assets/google.png" class="social__icons">
+                                <img src="./assets/twitter.png" class="social__icons">
+                                <img src="./assets/linkedin.png" class="social__icons">
                             </div>
-                            <div class="under__contacts__container">
-                                <img src="./assets/mail.png" class="third__contacts__img">
-                                <a href="mailto:username@gmail.com" class="third__under__contacts__paragraph">       info@singolo.com</a>
+                        </div>
+                        <div class="about__columns">
+                            <img src="./assets/desmond.png" class="columns__img">
+                            <div class="about__description">
+                                <p class="description__heading">Desmond Miles</p>
+                                <p class="description__paragraph">Curabitur vestibulum eget mauris quis laoreet.
+                                    Phasellus in quam laoreet, viverra lacus ut, ultrices velit.</p>
+                            </div>
+                            <div class="social social__second">
+                                <img src="./assets/facebook.png" class="social__icons">
+                                <img src="./assets/google.png" class="social__icons">
+                                <img src="./assets/twitter.png" class="twitter">
+                                <img src="./assets/linkedin.png" class="social__icons">
+                            </div>
+                        </div>
+                        <div class="about__columns">
+                            <img src="./assets/scolara.png" class="columns__img">
+                            <div class="about__description">
+                                <p class="description__heading">Scolara Visari</p>
+                                <p class="description__paragraph">Nulla sed nunc et tortor luctus faucibus.
+                                    Morbi at aliquet turpis, et consequat felis. Quisque condimentum.</p>
+                            </div>
+                            <div class="social social__third">
+                                <img src="./assets/facebook.png" class="social__icons">
+                                <img src="./assets/google.png" class="social__icons">
+                                <img src="./assets/twitter.png" class="social__icons">
+                                <img src="./assets/linkedin.png" class="social__icons">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
+
     </div>
-</main>
+    <div class="main__bg__singolo3" id="contact">
+        <div class="wrapper__singolo3">
+            <div class="form__text">
+                <h2 class="form__heading">Get a Quote</h2>
+                <p class="form__paragraph">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum.
+                    Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce
+                    dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+            </div>
+            <div class="form__container">
+                <form class="forms"  name="letter" id="forms">
+                    <input name="name" type="text" class="form first__form reqired__inputs " placeholder="Name (Required)" required maxlength="12"
+                           minlength="3" >
+                    <input name="email" type="email" class="form other__forms reqired__inputs" placeholder="Email (Required)" required>
+                    <input  name="subject" type="text" class="form third__forms" placeholder="Subject">
+                    <textarea name="description" class="textarea fourth__form" placeholder="Describe your project in detail..."></textarea>
+                    <input name="submit" type="submit" value="submit" class="form__button" >
+                </form>
+                <div class="contacts">
+                    <p class="contacts__heading">Contact Information</p>
+                    <p class="contacts__paragraph">Quisque hendrerit purus dapibus, ornare nibh vitae, viverra nibh. Fusce vitae aliquam tellus.
+                        Proin sit amet volutpat libero. Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet
+                        turpis, et consequat felis.
+                    </p>
+                    <div class="under__contacts">
+                        <div class="first__under__contacts__container">
+                            <img src="./assets/location.png" class="contacts__img">
+                            <p class="under__contacts__paragraph"> Elm St. 14/05 Lost City</p>
+                        </div>
+                        <div class="under__contacts__container">
+                            <img src="./assets/phone%20(1).png" class="second__contacts__img">
+                            <a href="tel:+1234567890" class="second__under__contacts__paragraph">     03528 331 86 35</a>
+                        </div>
+                        <div class="under__contacts__container">
+                            <img src="./assets/mail.png" class="third__contacts__img">
+                            <a href="mailto:username@gmail.com" class="third__under__contacts__paragraph">       info@singolo.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
 <footer class="footer__bg">
     <div class="footer__wrapper">
-        <p class="footer__paragraph">© Copyright 2013 · by PSDchat.com</p>
-        <div class="footer__contacts">
-            <img src="./assets/facebook.png" alt="" class="footer__social first__icon">
-            <img src="./assets/google.png" alt="" class="footer__social second__icon">
-            <img src="./assets/twitter.png" alt="" class="footer__social third__icon">
-            <img src="./assets/linkedin.png" alt="" class="footer__social fourth__icon">
+        <div class="footer__container">
+        <p class="footer__paragraph">© Copyright 2013</p>
+            <div class="footer__contacts">
+                <img src="./assets/facebook.png" alt="" class="footer__social first__icon">
+                <img src="./assets/google.png" alt="" class="footer__social second__icon">
+                <img src="./assets/twitter.png" alt="" class="footer__social third__icon">
+                <img src="./assets/linkedin.png" alt="" class="footer__social fourth__icon">
+            </div>
         </div>
 
     </div>
