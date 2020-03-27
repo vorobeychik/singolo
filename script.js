@@ -231,18 +231,17 @@ function horizontal__phone__display() {
 function navigation() {
     NAV__LI.addEventListener("click",(event)=>{
 
-
         NAV__LI.querySelectorAll('a').forEach(elem => elem.style.color = '#ffffff');
         event.target.style.color = '#bf5d59';
 
     })
 }
 function switches() {
+    debugger
  let arr = [];
- PIC.querySelectorAll('div').forEach(elem => {
-     elem.id = Math.ceil(Math.random()*100)
-     arr.push(elem.id)
-
+ PIC.querySelectorAll('li').forEach(elem => {
+     elem.id = Math.ceil(Math.random()*100);
+     arr.push(elem.id);
      arr.sort();
  });
   for(let i of arr){
@@ -250,7 +249,6 @@ function switches() {
     PIC.insertBefore(element,PIC.firstChild)
   }
 
-    console.log(arr)
 }
 function change__color() {
     BUTTON.addEventListener("click",(event)=>{
