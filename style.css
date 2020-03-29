@@ -500,7 +500,7 @@
         margin-left: 1px;
         margin-top: 10px;
         height: 22px;
-        width: 287px;
+        max-width: 287px;
         display: flex;
         justify-content: space-between;
         flex-direction: row;
