@@ -8,6 +8,43 @@ const ITEMS = document.getElementById('slider');
 const LEFT = document.getElementsByClassName('b-carousel__prev')[0];
 const RIGHT = document.getElementsByClassName('b-carousel__next')[0];
 const BG = document.getElementById('sliderbg');
+const BURGER = document.getElementById('burger__button');
+const BURGER__MENU = document.querySelector('.burger')
+const BURGER2 = document.getElementById('burger__button2');
+const SEC = document.querySelectorAll('section')
+
+let state = false;
+BURGER.addEventListener("click",event => {
+    BURGER__MENU.classList.remove('burger');
+    BURGER__MENU.classList.add('navigation__burger');
+    BURGER2.classList.add('rotate')
+    BURGER__MENU.style.top = `${window.scrollY + 20}px`
+    document.body.classList.toggle('block')
+
+});
+BURGER2.addEventListener("click",event => {
+    BURGER__MENU.classList.remove('navigation__burger');
+    BURGER__MENU.classList.add('burger');
+    document.body.classList.toggle('block')
+
+});
+
+document.addEventListener('scroll',scroling);
+
+function scroling() {
+      const POSITION = window.scrollY;
+      SEC.forEach( (e,i) => {
+          if(e.offsetTop - 100 <= POSITION   && (e.offsetHeight + e.offsetTop - 100)> POSITION){
+              NAV__LI.querySelectorAll('a').forEach(elem => elem.style.color = '#ffffff');
+              NAV__LI.querySelectorAll('a')[i].style.color = '#bf5d59';
+          }
+      })
+}
+
+
+
+
+
 
 (function() {
     "use strict";
@@ -88,7 +125,6 @@ const BG = document.getElementById('sliderbg');
         };
 
 
-        // Go to
         this.goto = index => {
             privates.opt.position = index - 1;
             this.next_slide();
@@ -99,7 +135,6 @@ const BG = document.getElementById('sliderbg');
             return privates.opt.position;
         };
 
-        /* privates methods */
         privates.hts = e => {
             xDown = e.touches[0].clientX;
             yDown = e.touches[0].clientY;
@@ -154,10 +189,7 @@ const BG = document.getElementById('sliderbg');
                 .length
         };
 
-        /* Constructor */
-        // Clone first elem to end wrap
         privates.sel.wrap.appendChild(privates.sel.children[0].cloneNode(true));
-        // Control
         if (privates.sel.prev !== null) {
             privates.sel.prev.addEventListener("click", () => {
                 this.prev_slide();
@@ -228,16 +260,16 @@ function horizontal__phone__display() {
   });
 
 
-function navigation() {
-    NAV__LI.addEventListener("click",(event)=>{
-
-        NAV__LI.querySelectorAll('a').forEach(elem => elem.style.color = '#ffffff');
-        event.target.style.color = '#bf5d59';
-
-    })
+function closeMenu(){
+    document.body.classList.remove('block');
+    BURGER__MENU.classList.remove('navigation__burger');
+    BURGER__MENU.classList.add('burger');
 }
+
+
+
 function switches() {
-    debugger
+
  let arr = [];
  PIC.querySelectorAll('li').forEach(elem => {
      elem.id = Math.ceil(Math.random()*100);
@@ -254,10 +286,13 @@ function change__color() {
     BUTTON.addEventListener("click",(event)=>{
 
         BUTTON.querySelectorAll('button').forEach(elem => {
+
             elem.style.color = '#666d89';
             elem.style.border = ' 1px solid #666d89'});
         event.target.style.border = '1px solid #c5c5c5';
         event.target.style.color = '#c5c5c5';
+        BUTTON.style.color = '#666d89';
+        BUTTON.style.border = '0px solid #2d303a';
     });
     console.log(BUTTON.querySelectorAll('button'));
     console.log(PIC.querySelectorAll('div'));
@@ -265,17 +300,20 @@ function change__color() {
     switches();
 }
 
+
 PIC.addEventListener('click', event=>{
-  PIC.querySelectorAll('div').forEach(elem => {
-      elem.style.outline = ' 0px solid #666d89';
-      event.target.style.outline = '5px solid #F06C64'
-  })
-})
+  let ra = PIC.querySelectorAll('img')
+    for(let i = 0;i < ra.length;i++){
+      ra[i].classList.remove('outline');
+      event.target.classList.add('outline')}
+      PIC.classList.remove('outline');
+});
 
 
 
 document.querySelector('.form__button').addEventListener('click',event =>{
     event.preventDefault();
+    if(document.forms[0].reportValidity()){
     let subject  = `${FORMA.subject.value.length === 0 ? 'Без темы':'Тема:'.concat(FORMA.subject.value)}`;
     let dicribe  =  `${FORMA.description.value.length === 0 ? 'Без описания':'Описание:'.concat(FORMA.description.value)}`;
     document.getElementsByClassName('modal__subject')[0].innerText = '12asdasd4';
@@ -285,7 +323,8 @@ document.querySelector('.form__button').addEventListener('click',event =>{
     for(let i of document.getElementsByTagName('input')){
         i.value = '';
     }
-    document.getElementsByTagName('textarea')[0].value = ''
+    document.getElementsByTagName('input')[3].value = 'submit'
+    document.getElementsByTagName('textarea')[0].value = ''}
 
 });
 document.getElementById('close-too').addEventListener('click',event => {

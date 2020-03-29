@@ -1,10 +1,20 @@
     body{
         margin: 0;
+        min-width: 320px;
     }
     * {
         padding: 0;
         margin: 0;
         border: 0;
+    }
+    .outline{
+        outline: 5px solid #F06C64;
+    }
+    html{
+        scroll-behavior: smooth;
+    }
+    body.block{
+        overflow: hidden;
     }
     .psevdo__header{
         max-height: 95px;
@@ -34,7 +44,7 @@
         width: 100%;
         max-width: 700px;
     }
-    /* MAIN STYLES */
+
     .b-carousel {
         width: 100%;
         overflow: hidden;
@@ -221,6 +231,15 @@
         font-weight: bold;
         line-height: 6px;
     }
+    .logo__link__burg{
+        font-size: 19.69px ;
+        font-family: LatoBold;
+        text-decoration: none;
+        color: white;
+        text-transform: uppercase;
+        font-weight: bold;
+        line-height: 6px;
+    }
     .logo_star{
         color: #e66862;
     }
@@ -230,7 +249,7 @@
         justify-content: space-between;
         display: flex;
         margin-top: 46px;
-        margin-right: 37px;
+
 
 
 
@@ -258,26 +277,32 @@
     }
 
     .black__display__visible{
-        height: 335px;
-        width: 189px;
+        height: 314px;
+        width: 171px;
         background-color: black;
         position: absolute;
-        margin-left: 248px;
-        margin-top: 118px;
+        left: 24%;
+        top: 59%;
         display: block;
         z-index: 5;
+        border-radius: 4px;
     }
     .horizont__phone__display{
-        width: 336px;
-        height: 190px;
+        max-width: 309px;
+        max-height: 163px;
+        height: 17vw;
+        width: 31vw;
         position: absolute;
         background-color: black;
-        margin-left: 605px;
-        margin-top: 187px;
+        left: 45%;
+        margin-top: 4px;
+        top: 49%;
         z-index: 5;
+        border-radius: 2px
     }
     .slider__image{
-        width: 100%;
+        max-width: 1020px;
+        width: 102vw;
     }
     .horizont__phone__display__hidden{
         display: none;
@@ -640,7 +665,7 @@
     }
 
     .social {
-        margin-top: 25px;
+        margin-top: 6%;
         display: flex;
         justify-content: space-between;
         width: 154px;
@@ -932,7 +957,67 @@
     .fourth__icon{
         margin-right: 1px;
     }
-    
+    .burger__button{
+        display: none;
+        z-index: 302;
+    }
+    .navigation__burger{
+        float: right;
+        justify-content: space-between;
+        flex-direction: column;
+        position: absolute;
+        z-index: 300;
+        display: block;
+        width: 74%;
+        height: 100%;
+        background-color: #2d303a;
+        transition: left 0.7s ease-out;
+
+    }
+    .burger{
+        display: none;
+    }
+
+    .logo{margin: 0 auto
+    }
+    .nav__li__burg{
+        text-transform: uppercase;
+        text-decoration: none;
+        color: #ffffff;
+        font-family: "LatoBold";
+        font-size: 24px;
+        list-style-type: none;
+        line-height: 6px;
+        letter-spacing: 0.01px;
+    }
+    .navigation__menu{
+        display: flex;
+        flex-direction: column;
+        height: 240px;
+        justify-content: space-between;
+        padding-left: 15%;
+        padding-top: 23%;
+    }
+    .burg__logo{
+        padding-left: 15%;
+    }
+    .button__part{
+        width: 25px;
+        height: 2.4px;
+        background-color: white;
+    }
+    .rotate{
+        transform: rotate(90deg);
+    }
+    @keyframes rot {
+        from{
+            transform: rotate(0deg);
+        }
+        to{
+            transform: rotate(90deg);
+
+        }
+    }
     @media  (max-width: 1019px){
         .picture{
             flex: 1 0 25%;
@@ -940,21 +1025,72 @@
     }
 
     @media  (max-width: 767px){
-        .navigation{display: none}
-        .logo{margin: 0 auto}
+        .header{
+            height: 71px;
+        }
+        .logo__button{
+            display: flex;
+            align-items: center;
+            width: 100%;
+
+        }
+        .logo__button__burg{
+            display: flex;
+            align-items: center;
+            width: 47%;
+            padding-top: 31px;
+            padding-left: 16px;
+
+
+        }
+        .wrapper{
+            justify-content: center;
+        }
+        .dot::before {
+            content: none;
+
+        }
+        .burger__button{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 25px;
+            height: 20px;
+            margin-left: 4%;
+            transition: all 0.5s ease-out
+
+
+
+
+        }
+
+        .wrapper{
+
+        }
+        .navigation{
+            display: none
+        }
+
         .picture{
             flex: 1 0 35%;
         }
         .columns__container{
             flex-wrap: wrap;
             margin-bottom: 0px;
+            max-width: 320px;
+            margin: auto;
 
         }
         .about__columns{
             width: auto;
             margin-right: 0px;
             float: left;
-            margin-bottom: 36px
+            margin-bottom: 36px;
+            max-width: 320px;
+        }
+        .contacts__img{
+
+            max-width: 320px;
         }
         .form__container{
             display: flex;
@@ -999,7 +1135,9 @@
         .picture{
             flex: 1 0 35%;
         }
-        .navigation{display: none}
+        .navigation{
+            display: none
+        }
         .logo{margin: 0 auto}
         .columns__container{
             flex-wrap: wrap;

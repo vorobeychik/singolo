@@ -2,19 +2,26 @@
 <html lang="en">
 <head>
     <link  rel="stylesheet" href ="style.css" type="text/css" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
 
 <header class="header" >
-
     <div class="wrapper">
-        <div class="logo" >
-            <h1><a  href="#" class = "logo__link" >singolo<span class="logo_star">*</span></a></h1>
+        <div class="logo__button">
+            <div class="burger__button" id="burger__button">
+                <div class="button__part"></div>
+                <div class="button__part"></div>
+                <div class="button__part"></div>
+            </div>
+            <div class="logo" >
+                <h1><a  href="#" class = "logo__link" >singolo<span class="logo_star">*</span></a></h1>
+            </div>
         </div>
         <nav class="navigation" id="nav">
-            <a href="#navigation" class="nav__li" onclick="navigation()" >home</a>
+            <a href="#sliderbg" class="nav__li" onclick="navigation()" >home</a>
             <a href="#services" class="dot nav__li" onclick="navigation()" >services</a>
             <a href="#portfolio" class="dot nav__li" onclick="navigation()">portfolio</a>
             <a href="#about__us" class="dot nav__li" onclick="navigation()">about</a>
@@ -22,9 +29,26 @@
         </nav>
     </div>
 </header>
-
-
-    <div class="slider__bg" id="sliderbg">
+    <div class="burger"> <nav class="navigation__burg">
+        <div class="logo__button__burg" >
+            <div class="burger__button" id="burger__button2">
+                <div class="button__part"></div>
+                <div class="button__part"></div>
+                <div class="button__part"></div>
+            </div>
+            <div class="burg__logo">
+                <h1><a  href="#" class = "logo__link__burg" >singolo<span class="logo_star">*</span></a></h1>
+            </div>
+        </div>
+        <div class=navigation__menu>
+            <a href="#sliderbg" class="dot nav__li__burg" onclick="closeMenu()" >home</a>
+            <a href="#services" class="dot nav__li__burg" onclick="closeMenu()" >services</a>
+            <a href="#portfolio" class="dot nav__li__burg" onclick="closeMenu()">portfolio</a>
+            <a href="#about__us" class="dot nav__li__burg" onclick="closeMenu()">about</a>
+            <a href="#contact" class="dot nav__li__burg" onclick="closeMenu()">contact</a>
+        </div>
+    </nav></div>
+    <section class="slider__bg" id="sliderbg">
         <div class="psevdo__header"></div>
         <div class="wrapper__slider">
             <div class="wrap">
@@ -46,8 +70,8 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="services__bg" id="services">
+    </section>
+    <section class="services__bg" id="services">
         <div class="services__wrapper">
             <div class="services__text">
                 <h2 class="h2__services">Our Services</h2>
@@ -108,8 +132,8 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="pictures__bg" id="portfolio">
+    </section>
+    <section class="pictures__bg" id="portfolio">
         <div class="wrapper__pictures">
             <div class="container__singolo2">
                 <div class="header__singolo2">
@@ -138,7 +162,7 @@
                 </ul>
             </div>
         </div>
-    </div>
+    </section>
     <div class="modal" id="modal">
         <div class="modal-backdrop"></div>
         <div class="modal-body">
@@ -152,7 +176,7 @@
             <button id="close-too" class="button-modal">OK</button>
         </div>
     </div>
-    <div class="about__bg" id="about__us">
+    <section class="about__bg" id="about__us">
         <div class="about__wrapper">
             <div class="about__text">
                 <div class="about__container">
@@ -208,8 +232,8 @@
             </div>
         </div>
 
-    </div>
-    <div class="main__bg__singolo3" id="contact">
+    </section>
+    <section class="main__bg__singolo3" id="contact">
         <div class="wrapper__singolo3">
             <div class="form__text">
                 <h2 class="form__heading">Get a Quote</h2>
@@ -250,9 +274,9 @@
             </div>
         </div>
 
-    </div>
+    </section>
 
-<footer class="footer__bg">
+<section class="footer__bg">
     <div class="footer__wrapper">
         <div class="footer__container">
         <p class="footer__paragraph">© Copyright 2013</p>
@@ -265,7 +289,7 @@
         </div>
 
     </div>
-</footer>
+</section>
 <script src="script.js" type="text/javascript"></script>
 </body>
 
